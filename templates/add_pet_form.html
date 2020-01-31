@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Add a Pet {% endblock %}
+
+{% block content %}
+
+{% for msg in get_flashed_messages() %}
+  <p>{{ msg }}</p>
+{% endfor %}
+
+<form id="add-pet-form" method="POST">
+  {{ form.hidden_tag() }}
+
+  {% for field in form
+         if field.widget.input_type != 'hidden' %}
+    <p>
+      {{ field.label }}
+      {{ field }}
+
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </p>
+  {% endfor %}
+
+  <button>Add Pet Now!</button>
+</form>
+{% endblock %}

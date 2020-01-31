@@ -12,13 +12,18 @@
 
 {% if pet.available %}
 
-<h3>{{pet.name}} <b>is available!</b></h3>
+<p>{{pet.name}} <b>is available!</b></p>
 
 {% else %}
 
-<h3>{{pet.name}}</h3>
+<p>{{pet.name}}</p>
 
 {% endif %}
+
+<form action="/add" method="GET">
+  <button>Add a Pet</button>
+</form>
+
 
 
 {% endfor %}
