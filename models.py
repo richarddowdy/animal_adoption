@@ -24,7 +24,7 @@ class Pet(db.Model):
 
     photo_url = db.Column(db.Text,
                           default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqcpQuKG8uBr-KMokrLyk-5VWzFGBzx2bUUT2ZGhCgs2xdwxAfSg&s",
-                          nullable=True)
+                          nullable=False)
     
     age = db.Column(db.Integer,
                     nullable=False)

@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %} Add a Pet {% endblock %}
+{% block title %} Edit Pet {% endblock %}
 
 {% block content %}
+<h3>NAME: {{pet.name}}</h3>
+<img src="{{pet.photo_url}}" alt="">
+<p>AGE: {{pet.age}}</p>
+<p>SPECIES: {{pet.species}}</p>
 
-
-
-<form id="add-pet-form" method="POST">
+<form id="edit-pet-form" method="POST">
   {{ form.hidden_tag() }}
 
   {% for field in form
@@ -21,6 +23,6 @@
     </p>
   {% endfor %}
 
-  <button>Add Pet Now!</button>
+  <button>Edit This Pet!</button>
 </form>
 {% endblock %}
