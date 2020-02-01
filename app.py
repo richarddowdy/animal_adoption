@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, flash
 from models import db, connect_db, Pet
 from forms import AddPetForm, EditPetForm
+from secrets import API_KEY
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "oh-so-secret"
